@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
-const { ObjectId } = mongoose.Schema.Types
+const { ObjectId } = mongoose.Schema.Types;
 
-const carSchema = new mongoose.Schema({
-    owner: { type: Object, ref: 'User' },
+const carSchema = new mongoose.Schema(
+  {
+    owner: { type: Object, ref: "User" },
     brand: { type: String, required: true },
     model: { type: String, required: true },
     image: { type: String, required: true },
@@ -14,9 +15,11 @@ const carSchema = new mongoose.Schema({
     pricePerDay: { type: Number, required: true },
     location: { type: String, required: true },
     description: { type: String, required: true },
-    isAvaliable: { type: Boolean, required: true }
-}, { timestamps: true })
+    isAvaliable: { type: Boolean, required: true },
+  },
+  { timestamps: true }
+);
 
-const Car = mongoose.model('Car', carSchema);
+const Car = mongoose.model("Car", carSchema);
 
-export default Car
+export default Car;
